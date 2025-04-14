@@ -17,9 +17,8 @@ bool ImportData(const string& inputFilePath, size_t& n, double& S, double*& w, d
 	}
 	
 	string line;
-	while (!file.eof()) //questo ciclo while mi serve per memorizzare S dato nel file di input)
+	while (getline(file,line)) //questo ciclo while mi serve per memorizzare S dato nel file di input)
 	{
-		getline(file,line); //legge una riga per volta e la memorizza in line
 		if (line.find("S") == 0) //file.find("S;") restituisce la posizionedella stringa in cui si trova S --> sto cercando s all'inizio della riga
 		{
 			S = stod(line.substr(2)); // line.substr(2) estrae da line tutti i caratteri dalla seconda poszione in poi (salto la prima posizione perchè li trova ";"
